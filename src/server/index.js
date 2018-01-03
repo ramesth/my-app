@@ -28,12 +28,12 @@ app.use(function (req, res, next) {
     next();
 });
 
-
+//app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
 app.get('/', function (req, res) {
-  res.sendFile(__dirname + '/index.html');
+  res.sendFile(__dirname + '/src/index.html');
 });
 
 app.post('/users', user.createUsers);

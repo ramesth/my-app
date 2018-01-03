@@ -3,7 +3,6 @@ import { Person } from './person';
 import { FormsModule } from '@angular/forms';
 import { Http, Response, Headers, RequestOptions } from '@angular/http';
 import {UsersComponent} from './users.service';
-import {PersonsComponent} from "./persons.component";
 import { Observable } from 'rxjs/Rx';
 import { Subject } from 'rxjs/Subject';
 import {PersonProfile} from './personProfile';

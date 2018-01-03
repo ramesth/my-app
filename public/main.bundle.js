@@ -38,7 +38,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/app.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<!--The content below is only a placeholder and can be replaced.-->\n<div style=\"text-align:center\">\n  <h1>\n    Welcome to {{ title }}!\n  </h1>\n  <img width=\"100\" alt=\"Angular Logo\" src=\"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==\">\n</div>\n<div>\n<table border=\"1\">\n<tr><td>Name  :</td><td><input #n1 type=\"text\"  [(ngModel)]= \"name\" /> </td></tr>\n<tr><td>Age   :</td><td><input #a1 type=\"text\"   [(ngModel)]=\"age\" /> </td></tr>\n<tr><td>Email :</td><td><input #e1 type=\"text\" [(ngModel)]=\"email\" /> </td></tr>\n\n<button (click)=\"onSubmit()\" >submit</button>\n<button (click)=\"onGo(this.age)\" >Display All</button>\n</table>\n\n<div>\n\n</div>\n<table border=\"1\">\n  <tr>from userProfile <tr>\n  <tr *ngFor=\"let p of users\">\n  <td>{{p._id}}</td>\n  <td>{{p.name}}</td>\n  <td>{{p.age}}</td>\n  <td>{{p.email}}</td>\n  <td><button (click)=\"onDelete(p._id)\" >Delete</button></td>\n  </tr>\n    \n</table>\n\n\n</div>\n\n<ul>\n  <li>\n    <h2><a target=\"_blank\" rel=\"noopener\" href=\"https://blog.angular.io/\">Angular blog</a></h2>\n  </li>\n</ul>\n\n"
+module.exports = "<!--The content below is only a placeholder and can be replaced.-->\n<div style=\"text-align:center\">\n  <h1>\n    Welcome to {{ title }}!\n  </h1>\n  <img width=\"100\" alt=\"Angular Logo\" src=\"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==\">\n</div>\n<div>\n<table border=\"1\">\n<tr><td>Name  :</td><td><input #n1 type=\"text\"  [(ngModel)]= \"name\" /> </td></tr>\n<tr><td>Age   :</td><td><input #a1 type=\"text\"   [(ngModel)]=\"age\" /> </td></tr>\n<tr><td>Email :</td><td><input #e1 type=\"text\" [(ngModel)]=\"email\" /> </td></tr>\n\n<button (click)=\"onSubmit()\" >submit</button>\n<button (click)=\"onGo(this.age)\" >Display All</button>\n</table>\n\n<div>\n\n</div>\n<table border=\"1\">\n  <tr>From userProfile <tr>\n  <tr *ngFor=\"let p of users\">\n  <td>{{p._id}}</td>\n  <td>{{p.name}}</td>\n  <td>{{p.age}}</td>\n  <td>{{p.email}}</td>\n  <td><button (click)=\"onDelete(p._id)\" >Delete</button></td>\n  </tr>\n    \n</table>\n\n\n</div>\n\n<ul>\n  <li>\n    <h2><a target=\"_blank\" rel=\"noopener\" href=\"https://blog.angular.io/\">Angular blog</a></h2>\n  </li>\n</ul>\n\n"
 
 /***/ }),
 
@@ -167,8 +167,7 @@ var AppComponent = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__("../../../forms/esm5/forms.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__("../../../http/esm5/http.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__users_service__ = __webpack_require__("../../../../../src/app/users.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__persons_component__ = __webpack_require__("../../../../../src/app/persons.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__app_component__ = __webpack_require__("../../../../../src/app/app.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__app_component__ = __webpack_require__("../../../../../src/app/app.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -181,41 +180,24 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-
 var AppModule = (function () {
     function AppModule() {
     }
     AppModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["E" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_6__app_component__["a" /* AppComponent */]
+                __WEBPACK_IMPORTED_MODULE_5__app_component__["a" /* AppComponent */]
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
                 __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormsModule */],
                 __WEBPACK_IMPORTED_MODULE_3__angular_http__["c" /* HttpModule */]
             ],
-            providers: [__WEBPACK_IMPORTED_MODULE_4__users_service__["a" /* UsersComponent */], __WEBPACK_IMPORTED_MODULE_5__persons_component__["a" /* PersonsComponent */]],
-            bootstrap: [__WEBPACK_IMPORTED_MODULE_6__app_component__["a" /* AppComponent */]]
+            providers: [__WEBPACK_IMPORTED_MODULE_4__users_service__["a" /* UsersComponent */]],
+            bootstrap: [__WEBPACK_IMPORTED_MODULE_5__app_component__["a" /* AppComponent */]]
         })
     ], AppModule);
     return AppModule;
-}());
-
-
-
-/***/ }),
-
-/***/ "../../../../../src/app/person.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Person; });
-var Person = (function () {
-    function Person(n) {
-        this.name = n;
-    }
-    return Person;
 }());
 
 
@@ -234,71 +216,6 @@ var PersonProfile = (function () {
         this.email = e;
     }
     return PersonProfile;
-}());
-
-
-
-/***/ }),
-
-/***/ "../../../../../src/app/persons.component.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PersonsComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__person__ = __webpack_require__("../../../../../src/app/person.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__users_service__ = __webpack_require__("../../../../../src/app/users.service.ts");
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-var PersonsComponent = (function () {
-    // private _customerService: CustomerService;
-    // @Input()  subtitle = '';
-    // title = 'NgModules';
-    function PersonsComponent(_customerService) {
-        this._customerService = _customerService;
-    }
-    PersonsComponent.prototype.ngOnInit = function () {
-        this.getPerson();
-        //this.cust = this._customerService.getWhat();
-    };
-    PersonsComponent.prototype.getPerson = function () {
-        var _this = this;
-        this._customerService.getUser()
-            .subscribe(function (persons) {
-            _this.persons = persons;
-        }, function (err) { return console.log(err); });
-    };
-    PersonsComponent.prototype.getAllGrocery = function () {
-        var _this = this;
-        this._customerService.getUser().subscribe(function (res) {
-            _this.persons = [];
-            res.json().data.map(function (e) {
-                _this.persons.push(new __WEBPACK_IMPORTED_MODULE_1__person__["a" /* Person */](e.name));
-            });
-        });
-    };
-    PersonsComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'app-customers',
-            template: 'ddd',
-            //'ul><li *ngFor="let t of persons|async"> ioi </ul>',
-            //<ul><li *ngFor="let t of persons|async"> ioi[t] </ul>'
-            //template:'<h3> hello{{title}} {{subtitle}} </h3>'
-            providers: [__WEBPACK_IMPORTED_MODULE_2__users_service__["a" /* UsersComponent */]]
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__users_service__["a" /* UsersComponent */]])
-    ], PersonsComponent);
-    return PersonsComponent;
 }());
 
 

@@ -8,10 +8,13 @@ var PersonProfile = new mongoose.Schema({
   email:String
 });
 
+var database = require('./dbconfig'); 
 mongoose.model('Person', Person);  
 mongoose.model('PersonProfile', PersonProfile);  
-var  db=mongoose.connect('mongodb://localhost/'); 
-//db.on('error', console.error.bind(console, 'connection error:'));
+
+var  db=mongoose.connect(process.env.MONGO_URL|| database.localUrl); 
+//var  db=mongoose.connect(database.remoteUrl|| database.localUrl); 
+db.connection.on('error', console.error.bind(console, 'connection error:'));
 
   console.log('we are connected');
 

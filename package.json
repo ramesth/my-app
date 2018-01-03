@@ -4,7 +4,7 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "concurrently --kill-others \"node server.js\" \"npm run serve\"",
+    "start": "npm run build & concurrently --kill-others \"node .\\src\\server\\index.js\" \"npm run serve\"",
     "serve": "ng serve --proxy-config proxy.conf.json",
     "build": "ng build --output-path=public",
     "test": "ng test",
