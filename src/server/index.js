@@ -43,6 +43,6 @@ app.post('/userProfile', user.createUserProfile);
 app.get('/userProfile', user.searchResults);
 app.delete('/userProfile/:id', user.deleteUserProfile);
 
-app.listen(3000, function () {
+app.listen(80, function () {
   console.log('Example app listening on port 3000!');
 });
