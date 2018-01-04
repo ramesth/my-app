@@ -1,7 +1,7 @@
 
 {
     "/": {
-      "target": "http://angramtest.azurewebsites.net:80",
-      "secure": false
+      "target": "https://angramtest.azurewebsites.net:80",
+      "secure": true
     }
   }
