@@ -1,9 +1,13 @@
 {
-    "name": "node-todo",
+    "name": "my-app",
     "version": "0.0.1",
-    "description": "Simple todo application.",
+    "description": "my-app",
+    "scripts": {
+      "start": "node index.js"
+    },
      "dependencies": {
-       "express": "^4.13.4"
+       "express": "^4.13.4",
+       "body-parser": "^1.17.2"
    
     }
   }

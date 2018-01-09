@@ -1,5 +1,5 @@
 var express = require('express');
-
+const publicweb = process.env.PUBLICWEB || '.';
 const bodyParser= require('body-parser');
 var app = express();
 var db = require('./db');
@@ -7,12 +7,12 @@ var user = require('./user');
 
 
 	
-
+app.use(express.static(publicweb));
 // Add headers
 app.use(function (req, res, next) {
 
     // Website you wish to allow to connect
-    res.setHeader('Access-Control-Allow-Origin', 'http://localhost:4200');
+    res.setHeader('Access-Control-Allow-Origin', 'http://localhost:8080');
 
     // Request methods you wish to allow
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
@@ -33,7 +33,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
 app.get('/', function (req, res) {
-  res.sendFile(__dirname + '/src/index.html');
+  res.sendFile('index.html',{root:publicweb});
 });
 
 app.post('/users', user.createUsers);
@@ -43,6 +43,8 @@ app.post('/userProfile', user.createUserProfile);
 app.get('/userProfile', user.searchResults);
 app.delete('/userProfile/:id', user.deleteUserProfile);
 
-app.listen(80, function () {
-  console.log('Example app listening on port 3000!');
+
+const port = process.env.SERVER_PORT || '80';
+app.listen(port, function () {
+  console.log('Example app listening on localhost:${port}');
 });
