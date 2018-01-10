@@ -1,4 +1,4 @@
 module.exports = {
-    remoteUrl : 'mongodb://node:nodeuser@mongo.onmodulus.net:27017/uwO3mypu',
+    remoteUrl : 'mongodb://testmongocosmos:hpVdgd3uk6CwcrXoVuRgzvcNPxB5RGO2VpJjCMXhjvjeSs9IQEebgMRQSFGhH4oXxLP6FKs706VyEGOkpMSwQw==@testmongocosmos.documents.azure.com:10255/?ssl=true&sslverifycertificate=false',
     localUrl: 'mongodb://localhost'
 };

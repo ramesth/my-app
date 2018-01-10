@@ -36,6 +36,7 @@ app.get('/', function (req, res) {
   res.sendFile('index.html',{root:publicweb});
 });
 
+console.log('current dir __dirnmae:'+__dirname);
 app.post('/users', user.createUsers);
 app.get('/users', user.seeResults);
 app.delete('/users/:id', user.delete);
@@ -46,5 +47,5 @@ app.delete('/userProfile/:id', user.deleteUserProfile);
 
 const port = process.env.SERVER_PORT || '80';
 app.listen(port, function () {
-  console.log('Example app listening on localhost:${port}');
+  console.log('Example app listening on localhost:'+port);
 });
