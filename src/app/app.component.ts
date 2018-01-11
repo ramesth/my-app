@@ -20,6 +20,7 @@ export class AppComponent {
   name:String="Enter Name";
   age:Number=10;
   email:String="zzz@ssss.com";
+  app_url="https://angramtest.azurewebsites.net";
  
   persons:Person[];
   users:PersonProfile[];
@@ -66,7 +67,7 @@ export class AppComponent {
  
   getUsers(): void {
     
-        this.http.request('http://localhost:3000/userProfile/')
+        this.http.request(this.app_url+'/userProfile/')
           .subscribe((res: Response) => {
             this.userObject = res.json();
             this.users= this.convertObjToUser(this.userObject);
@@ -77,14 +78,14 @@ export class AppComponent {
     postUserProfile(user:PersonProfile) {
       var headers = new Headers();
       headers.append('Content-Type', 'application/json');
-      this.http.post('http://localhost:3000/userProfile',user,{ headers: headers}).subscribe();
+      this.http.post(this.app_url+'/userProfile',user,{ headers: headers}).subscribe();
           
       }
   
     deleteUserProfile(_id) {
       console.log('in delete');
       //return this.http.delete('http://localhost:3000/users/5a297dcdb9cbe131e4a19d6a');
-      return this.http.delete('http://localhost:3000/userProfile/'+_id).subscribe((res) => {
+      return this.http.delete(this.app_url+'/userProfile/'+_id).subscribe((res) => {
       });
     }
   onDelete(_id){
