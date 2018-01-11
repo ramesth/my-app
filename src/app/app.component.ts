@@ -66,8 +66,8 @@ export class AppComponent {
       }
  
   getUsers(): void {
-    
-        this.http.request(this.app_url+'/userProfile/')
+        console.log(this.app_url+'/userProfile');
+        this.http.request(this.app_url+'/userProfile')
           .subscribe((res: Response) => {
             this.userObject = res.json();
             this.users= this.convertObjToUser(this.userObject);
