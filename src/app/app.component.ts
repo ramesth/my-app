@@ -20,7 +20,7 @@ export class AppComponent {
   name:String="Enter Name";
   age:Number=10;
   email:String="zzz@ssss.com";
-  app_url="https://angramtest.azurewebsites.net";
+  app_url="https://angramtest.azurewebsites.net:8080/";
  
   persons:Person[];
   users:PersonProfile[];
