@@ -25,8 +25,8 @@ app.use(methodOverride('X-HTTP-Method-Override')); // override with the X-HTTP-M
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
-app.get('*', function (req, res) {
-  res.sendFile(__dirname + '/public/index.html');
+app.get('/', function (req, res) {
+  res.sendFile(__dirname + '/index.html');
 });
 
 console.log('current dir __dirnmae:'+__dirname);
