@@ -66,8 +66,8 @@ export class AppComponent {
       }
  
   getUsers(): void {
-        console.log(this.app_url+'/userProfile');
-        this.http.request(this.app_url+'/userProfile')
+       // console.log(this.app_url+'/userProfile');
+        this.http.request('/api/userProfile')
           .subscribe((res: Response) => {
             this.userObject = res.json();
             this.users= this.convertObjToUser(this.userObject);
@@ -78,14 +78,14 @@ export class AppComponent {
     postUserProfile(user:PersonProfile) {
       var headers = new Headers();
       headers.append('Content-Type', 'application/json');
-      this.http.post(this.app_url+'/userProfile',user,{ headers: headers}).subscribe();
+      this.http.post('/api/userProfile',user,{ headers: headers}).subscribe();
           
       }
   
     deleteUserProfile(_id) {
       console.log('in delete');
       //return this.http.delete('http://localhost:3000/users/5a297dcdb9cbe131e4a19d6a');
-      return this.http.delete(this.app_url+'/userProfile/'+_id).subscribe((res) => {
+      return this.http.delete('/api/userProfile/'+_id).subscribe((res) => {
       });
     }
   onDelete(_id){

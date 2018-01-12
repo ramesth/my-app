@@ -1,51 +1,41 @@
 var express = require('express');
 const publicweb = process.env.PUBLICWEB || '.';
+var methodOverride = require('method-override');
 const bodyParser= require('body-parser');
+var morgan = require('morgan');
+var port = process.env.PORT || 8080; 
 var app = express();
 var db = require('./db');
 var user = require('./user');
 
 
+
 	
-app.use(express.static(publicweb));
+app.use(express.static('./public')); 
 // Add headers
-app.use(function (req, res, next) {
+app.use(morgan('dev')); // log every request to the console
+app.use(bodyParser.urlencoded({'extended': 'true'})); // parse application/x-www-form-urlencoded
+app.use(bodyParser.json()); // parse application/json
+app.use(bodyParser.json({type: 'application/vnd.api+json'})); // parse application/vnd.api+json as json
+app.use(methodOverride('X-HTTP-Method-Override')); // override with the X-HTTP-Method-Override header in the request
 
-    // Website you wish to allow to connect
-    //res.setHeader('Access-Control-Allow-Origin', 'http://localhost:8080');
 
-    // Request methods you wish to allow
-    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
-
-    // Request headers you wish to allow
-    res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
-
-    // Set to true if you need the website to include cookies in the requests sent
-    // to the API (e.g. in case you use sessions)
-    res.setHeader('Access-Control-Allow-Credentials', true);
-
-    // Pass to next layer of middleware
-    next();
-});
 
 //app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
-app.get('/', function (req, res) {
-  res.sendFile('index.html',{root:publicweb});
+app.get('*', function (req, res) {
+  res.sendFile(__dirname + '/public/index.html');
 });
 
 console.log('current dir __dirnmae:'+__dirname);
-app.post('/users', user.createUsers);
-app.get('/users', user.seeResults);
-app.delete('/users/:id', user.delete);
-app.post('/userProfile', user.createUserProfile);
-app.get('/userProfile', user.searchResults);
-app.delete('/userProfile/:id', user.deleteUserProfile);
+app.post('/api/userProfile', user.createUserProfile);
+app.get('/api/userProfile', user.searchResults);
+app.delete('/api/userProfile/:id', user.deleteUserProfile);
 
 
-const port = process.env.SERVER_PORT || '80';
+
 app.listen(port, function () {
   console.log('Example app listening on localhost:'+port);
 });

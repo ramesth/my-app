@@ -23,7 +23,7 @@ export class UsersComponent {
   }
   */
   getUser(){
-    return this.http.get('http://localhost:3000/users',{})
+    return this.http.get('/api/user',{})
         .map((res:Response)=>{let persons=res.json()}).catch(this.handleError);
   }
   /*
