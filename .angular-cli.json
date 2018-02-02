@@ -10,10 +10,12 @@
       "assets": [
         "assets",
         "favicon.ico",
+        
         {
           "glob": "*.*",
           "input": "./server/",
-          "output": "./"
+          "output": "../",
+          "allowOutsideOutDir":true
         }
       ],
       "index": "index.html",

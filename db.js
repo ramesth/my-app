@@ -1,7 +1,9 @@
 var mongoose = require('mongoose');
 mongoose.Promise=global.Promise;  
-
 var Person = new mongoose.Schema({
+	name: String
+});
+var PersonProfile = new mongoose.Schema({
   name: String,
   age:Number,
   email:String
@@ -9,7 +11,7 @@ var Person = new mongoose.Schema({
 
 var database = require('./dbconfig'); 
 mongoose.model('Person', Person);  
- 
+mongoose.model('PersonProfile', PersonProfile);  
 
 var  db=mongoose.connect(process.env.MONGO_URL|| database.localUrl);
 

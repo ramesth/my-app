@@ -5,7 +5,7 @@ import { Http, Response, Headers, RequestOptions } from '@angular/http';
 import {UsersComponent} from './users.service';
 import { Observable } from 'rxjs/Rx';
 import { Subject } from 'rxjs/Subject';
-import {PersonProfile} from './personProfile';
+
 
 
 
@@ -20,11 +20,11 @@ export class AppComponent {
   name:String="Enter Name";
   age:Number=10;
   email:String="zzz@ssss.com";
-  app_url="https://angramtest.azurewebsites.net:443";
+  
  
-  persons:Person[];
-  users:PersonProfile[];
-  user:PersonProfile;
+  //persons:Person[];
+  users:Person[];
+  user:Person;
  
  
   str1:Object;
@@ -55,9 +55,9 @@ export class AppComponent {
           
      return persons1;
     }
-    convertObjToUser(inObj:Object):PersonProfile[]{
+    convertObjToUser(inObj:Object):Person[]{
       // converting Objtoperson type
-       var user1:PersonProfile[]=[];
+       var user1:Person[]=[];
         user1 = Object.keys(inObj).map(function(k) {
         return inObj[k]
        });
@@ -67,7 +67,7 @@ export class AppComponent {
  
   getUsers(): void {
        // console.log(this.app_url+'/userProfile');
-        this.http.request('/api/userProfile')
+        this.http.request('/api/user')
           .subscribe((res: Response) => {
             this.userObject = res.json();
             this.users= this.convertObjToUser(this.userObject);
@@ -75,17 +75,17 @@ export class AppComponent {
           });
   }
  
-    postUserProfile(user:PersonProfile) {
+    postUserProfile(user:Person) {
       var headers = new Headers();
       headers.append('Content-Type', 'application/json');
-      this.http.post('/api/userProfile',user,{ headers: headers}).subscribe();
+      this.http.post('/api/user',user,{ headers: headers}).subscribe();
           
       }
   
     deleteUserProfile(_id) {
       console.log('in delete');
       //return this.http.delete('http://localhost:3000/users/5a297dcdb9cbe131e4a19d6a');
-      return this.http.delete('/api/userProfile/'+_id).subscribe((res) => {
+      return this.http.delete('/api/user/'+_id).subscribe((res) => {
       });
     }
   onDelete(_id){
@@ -99,27 +99,10 @@ export class AppComponent {
     this.title="next ";
     //this.person=new Person('KritiThapa');
     //this.postUser(this.person);
-    this.postUserProfile(new PersonProfile(this.name,this.age,this.email));
+    this.postUserProfile(new Person(this.name,this.age,this.email));
     this.getUsers();
-    //this._customerService.postUser(this.person);
-    //this.http.get('http://localhost:3000/users');
-    //this.person = {name:"123df",age:21,email:"asdfasdf"};
-    //this.persons.push(this.person)
-  //  this.title=this.person.name;
-    //new Person("Kriti Thapa"s,  34,"ramesth@hotmail.com");
-   // this.person = new Person(value.name, value.email, value.age);
-   // var headers = new Headers();
-   // headers.append('Content-Type', 'application/json');
-    //headers.append('Content-Type', 'application/x-www-form-urlencoded');
-    //if (value) {
-    //  this.persons.push(this.person);
-    //}
-   // this.counter++;
-  // this.submitted = true;
+  
 
-   
-//this.http.post('http://localhost:3000/users',JSON.parse(JSON.stringify(this.person)), { headers: headers})
-//.subscribe();
       
   }
   

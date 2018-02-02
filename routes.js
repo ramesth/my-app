@@ -1,4 +1,3 @@
-
 const express = require('express');
 var user = require('./user');
 const router = express.Router();
@@ -6,12 +5,12 @@ const router = express.Router();
 
 
 
-router.route('/user')
-    .post(user.createUser)
-    .get(user.displayResults);
+router.route('/userProfile')
+    .post(user.createUserProfile)
+    .get(user.searchResults);
 
 
- router.delete('/user/:id', user.deleteUser); 
+ router.delete('/userProfile/:id', user.deleteUserProfile); 
  router.get('/heroes', (req, res) => {
     res.send(200, [
        {"id": 10, "name": "Starlord", "saying": "oh yeah"}

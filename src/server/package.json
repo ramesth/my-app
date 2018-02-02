@@ -3,7 +3,7 @@
     "version": "0.0.1",
     "description": "my-app",
     "scripts": {
-      "start": "node ./public/index.js"
+      "start": "node ./index.js"
     },
      "dependencies": {
        "express": "^4.13.4",
@@ -12,7 +12,8 @@
        "body-parser": "^1.17.2",
        "method-override": "^2.3.10",
        "morgan": "^1.9.0",
-       "path":"^0.12.7"
+       "path":"^0.12.7",
+       "fs":"^0.0.1-security"
    
     }
   }
