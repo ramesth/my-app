@@ -12,7 +12,8 @@ module.exports = function (config) {
       require('karma-coverage-istanbul-reporter'),
       require('@angular/cli/plugins/karma'),
       require('karma-phantomjs-launcher'),
-      require('karma-junit-reporter')  
+      require('karma-junit-reporter') ,
+      require('karma-coverage')
     ],
     files:[
       'src/spec/unit/**/*.js'
@@ -26,15 +27,26 @@ module.exports = function (config) {
       fixWebpackSourcePaths: true
     },
     junitReporter:{
-      outputDir:'',
-      outputFile:'test.xml'
+        outputDir:"./reports",
+        outputFile:'junit/test.xml'
+    },
+    
+    coverageReporter: {
+        type:   'lcov',
+        dir:    'reports',
+        subdir:'coverage'
+     
     },
     angularCli: {
       environment: 'dev'
     },
-    reporters: ['progress', 'kjhtml','junit'],
+
+    reporters: ['progress', 'kjhtml','junit','coverage'],
+    preprocessors:    {
+      'src/app/**/*.js':   ['coverage']
+  },
     port: 9876,
-    colors: true,
+    colors: false,
     logLevel: config.LOG_INFO,
     autoWatch: true,
     browsers: ['PhantomJS'],
