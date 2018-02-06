@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<testsuite name="PhantomJS 2.1.1 (Windows 7.0.0)" package="" timestamp="2018-02-06T22:50:42" id="0" hostname="WIN7ENT-NC8BADO" tests="10" errors="0" failures="0" time="1.18">
+  <properties>
+    <property name="browser.fullName" value="Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/538.1 (KHTML, like Gecko) PhantomJS/2.1.1 Safari/538.1"/>
+  </properties>
+  <testcase name="AppComponent should name has default age" time="0.256" classname="PhantomJS_2_1_1_(Windows_7_0_0).AppComponent"/>
+  <testcase name="AppComponent should name has default email" time="0.255" classname="PhantomJS_2_1_1_(Windows_7_0_0).AppComponent"/>
+  <testcase name="Person Component should create a person" time="0.003" classname="PhantomJS_2_1_1_(Windows_7_0_0).Person Component"/>
+  <testcase name="Person Component age should be" time="0.006" classname="PhantomJS_2_1_1_(Windows_7_0_0).Person Component"/>
+  <testcase name="Person Component check age 0 should return false" time="0.002" classname="PhantomJS_2_1_1_(Windows_7_0_0).Person Component"/>
+  <testcase name="Person Component check age 100 should return true" time="0.002" classname="PhantomJS_2_1_1_(Windows_7_0_0).Person Component"/>
+  <testcase name="Person Component check age 200 should return false" time="0.003" classname="PhantomJS_2_1_1_(Windows_7_0_0).Person Component"/>
+  <testcase name="when this test is executed by Karma this is a failed test" time="0.006" classname="PhantomJS_2_1_1_(Windows_7_0_0).when this test is executed by Karma"/>
+  <testcase name="AppComponent should create the app" time="0.387" classname="PhantomJS_2_1_1_(Windows_7_0_0).AppComponent"/>
+  <testcase name="AppComponent should have as title 'app'" time="0.26" classname="PhantomJS_2_1_1_(Windows_7_0_0).AppComponent"/>
+  <system-out>
+    <![CDATA[
+]]>
+  </system-out>
+  <system-err/>
+</testsuite>

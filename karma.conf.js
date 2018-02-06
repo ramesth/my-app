@@ -26,6 +26,11 @@ module.exports = function (config) {
       reports: [ 'html', 'lcovonly' ],
       fixWebpackSourcePaths: true
     },
+    preprocessors:    {
+      './src/**/*.js':['coverage']
+      
+
+  },
     junitReporter:{
         outputDir:"./reports",
         outputFile:'junit/test.xml'
@@ -41,14 +46,12 @@ module.exports = function (config) {
       environment: 'dev'
     },
 
-    reporters: ['progress', 'kjhtml','junit','coverage'],
-    preprocessors:    {
-      'src/app/**/*.js':   ['coverage']
-  },
+    reporters: ['progress', 'junit','coverage'],
+   
     port: 9876,
     colors: false,
     logLevel: config.LOG_INFO,
-    autoWatch: true,
+    autoWatch: false,
     browsers: ['PhantomJS'],
     singleRun: true
   });
