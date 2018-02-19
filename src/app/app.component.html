@@ -1,41 +1,68 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}! version 1.0
-  </h1>
-  <img width="100" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<div>
-<table border="1">
-<tr><td>Name  :</td><td><input #n1 type="text"  [(ngModel)]= "name" /> </td></tr>
-<tr><td>Age   :</td><td><input #a1 type="text"   [(ngModel)]="age" /> </td></tr>
-<tr><td>Email :</td><td><input #e1 type="text" [(ngModel)]="email" /> </td></tr>
-
-<button (click)="onSubmit()" >submit</button>
-<button (click)="onGo()" >Display All</button>
-</table>
-
+<div class="container">
+  <div class="jumbotron">
+     <h1> Welcome to {{ title }}! version 1.0 </h1>
+      <img width="100" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
+  </div>
 <div>
 
+
+<div class="panel panel-primary">
+   <div class="panel-heading">Enter Infromation </div>
+      <div class="panel-body">
+
+<div class="form-group row">
+    <label class=" control-label col-sm-2 text-right" for="name">Name :</label>
+    <div class="col-sm-10">
+      <input class="form-control" id="name"  #n1 type="text"  [(ngModel)]= "name" />
+    </div>
 </div>
-<table border="1">
-  <tr>From userProfile <tr>
+
+<div class="form-group row ">
+  <label class=" control-label col-sm-2 text-right" for="age">Age :</label>
+  <div class="col-sm-10">
+    <input class="form-control" id="age"  #a1 type="text"   [(ngModel)]="age" />
+  </div>
+</div>
+
+<div class="form-group row">
+    <label class=" control-label col-sm-2 text-right" for="email">Email :</label>
+    <div class="col-sm-10">
+      <input class="form-control" id="email"  #e1 type="text" [(ngModel)]="email" />
+    </div>
+</div>
+
+<div class="form-group row">
+ <div class="col-sm-12 ">
+   <div class="col-sm-7"></div>
+    <button class="btn btn-primary right"  (click)="onSubmit()" >submit</button>
+    <button class="btn btn-primary right" (click)="onGo()" >Display All</button>
+  </div>
+
+</div>
+
+</div>
+</div>
+
+<table class="table table-responsive table-bordered">
+  <thead>
+ 
+  <th class="text-center" > Id </th>
+  <th class="text-center"> Name</th>
+  <th class="text-center">Age</th>
+  <th class="text-center"> Email </th>
+  <th class="text-center"> Action </th>
+  </thead>
+  <tbody>
   <tr *ngFor="let p of users">
+  
   <td>{{p._id}}</td>
   <td>{{p.name}}</td>
   <td>{{p.age}}</td>
   <td>{{p.email}}</td>
-  <td><button (click)="onDelete(p._id)" >Delete</button></td>
+  <td><button class="btn btn-primary" (click)="onDelete(p._id)" >Delete</button></td>
   </tr>
-    
+</tbody>
 </table>
 
-
-</div>
-
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
 
