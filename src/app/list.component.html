@@ -1,0 +1,22 @@
+ 
+
+ <table class="table table-responsive table-bordered">
+        <thead>
+       
+        <th class="text-center" > Id </th>
+        <th class="text-center"> Name</th>
+        <th class="text-center">Age</th>
+        <th class="text-center"> Email </th>
+        <th class="text-center"> Action </th>
+        </thead>
+        <tbody>
+        <tr *ngFor="let p of users">
+        
+        <td>{{p._id}}</td>
+        <td>{{p.name}}</td>
+        <td>{{p.age}}</td>
+        <td>{{p.email}}</td>
+        <td><button class="btn btn-primary" (click)="onDelete(p._id)" >Delete</button></td>
+        </tr>
+      </tbody>
+      </table>

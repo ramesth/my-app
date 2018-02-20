@@ -1,47 +1,40 @@
-import {Injectable} from '@angular/core'
-import { Component } from '@angular/core';
-import { Person } from './person';
-import { Http, Response, Headers, RequestOptions } from '@angular/http';
-import { HttpClient, HttpResponse, HttpErrorResponse } from '@angular/common/http';
-import 'rxjs/add/operator/map';
-import { Observable } from 'rxjs/Observable';
-import {IPerson,IPersonResponse} from "./interfaces"
+
+import {Component,Injectable} from '@angular/core';
+import {Person} from './Person';
+import {Http,Response, Headers, RequestOptions} from '@angular/http';
+import {HttpResponse} from '@angular/common/http';
+import {Observable} from 'rxjs/Observable';
+
+
 
 
 @Injectable()
-export class UsersComponent { 
-  constructor(public http: Http) { }
+export class  UsersComponent{ 
   
- // public persons: any;
- //public person:Person;
- /*
-  getUsers():Observable<IPerson[]> {
-   return this.http.get<IPerson[]>('http://localhost:3000/users')
-     .map((persons:IPerson[]) => { return persons;});
-
-     
-  }
-  */
-  getUser(){
-    return this.http.get('/api/user',{})
-        .map((res:Response)=>{let persons=res.json()}).catch(this.handleError);
-  }
-  /*
-  postUser(person:Person) {
+  constructor(public http: Http) { }
+   //persons:Person[];
+  users:Person[];
+  str1:Object;
+  userObject:Object;
+  getUserData()  
+  {    
+     return this.http.get('api/user')
+     .toPromise()
+     .then(response => response.json());
+  } 
+  
+  postUserProfile(user:Person) {
     var headers = new Headers();
-    //headers.append('Content-Type', 'application/json');
-    headers.append('Content-Type', 'application/x-www-form-urlencoded');
-    this.http.post('http://localhost:3000/users',JSON.stringify(person))
-    .subscribe();
-    
-      //.subscribe((res: any) => {
-      //  this.persons = res;
-      //});
-   }
-  */
-  private handleError(error:any){
-    console.error("server error");
-    let errorMessage=error.json().error;
-    return Observable.throw(errorMessage);
+    headers.append('Content-Type', 'application/json');
+    this.http.post('/api/user',user,{ headers: headers}).subscribe();
+        
+    }
+  
+  deleteUserProfile(_id) {
+    console.log('in delete');
+    return this.http.delete('/api/user/'+_id).subscribe((res) => {
+    });
   }
+
+ 
 }

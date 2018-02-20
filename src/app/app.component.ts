@@ -34,12 +34,15 @@ export class AppComponent {
   
 
  
-  constructor(public http: Http) { };
+  constructor(public http: Http, public userService:UsersComponent) { 
+    
+  };
   ngOnInit() {
     
-     this.getUsers();
+    // this.getUsers();
   
   }
+  /*
   onGo()
   {
 
@@ -74,14 +77,14 @@ export class AppComponent {
     
           });
   }
- 
+ */
     postUserProfile(user:Person) {
       var headers = new Headers();
       headers.append('Content-Type', 'application/json');
       this.http.post('/api/user',user,{ headers: headers}).subscribe();
           
       }
-  
+  /*
     deleteUserProfile(_id) {
       console.log('in delete');
       //return this.http.delete('http://localhost:3000/users/5a297dcdb9cbe131e4a19d6a');
@@ -94,13 +97,15 @@ export class AppComponent {
     this.getUsers();
 
   }
+  */
   onSubmit() { 
     
     this.title="next ";
     //this.person=new Person('KritiThapa');
     //this.postUser(this.person);
+    
     this.postUserProfile(new Person(this.name,this.age,this.email));
-    this.getUsers();
+    //this.getUsers();
   
 
       
