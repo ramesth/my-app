@@ -7,6 +7,7 @@ import { HttpClientModule } from '@angular/common/http';
 import {UsersComponent} from './users.service';
 import { Person } from './person';
 
+
 import { Http, Response, Headers, RequestOptions } from '@angular/http';
 
 import { Observable } from 'rxjs/Rx';
@@ -24,6 +25,7 @@ import { Subject } from 'rxjs/Subject';
     name:String="Enter Name";
     age:Number=10;
     email:String="zzz@ssss.com";
+    msg:String='';
     
    
     //persons:Person[];
@@ -48,6 +50,7 @@ import { Subject } from 'rxjs/Subject';
       this.getUsers();
      
     }
+    
     convertObjToPersons(inObj:Object):Person[]{
       // converting Objtoperson type
        var persons1:Person[]=[];
@@ -76,34 +79,14 @@ import { Subject } from 'rxjs/Subject';
       
             });
     }
-   
-      postUserProfile(user:Person) {
-        var headers = new Headers();
-        headers.append('Content-Type', 'application/json');
-        this.http.post('/api/user',user,{ headers: headers}).subscribe();
-            
-        }
-    
-      deleteUserProfile(_id) {
-        console.log('in delete');
-        //return this.http.delete('http://localhost:3000/users/5a297dcdb9cbe131e4a19d6a');
-        return this.http.delete('/api/user/'+_id).subscribe((res) => {
-        });
-      }
-    onDelete(_id){
-      console.log("id"+_id);
-      this.deleteUserProfile(_id);
-      this.getUsers();
   
-    }
     onSubmit() { 
       
       this.title="next ";
-      //this.person=new Person('KritiThapa');
-      //this.postUser(this.person);
+      
       this.userService.postUserProfile(new Person(this.name,this.age,this.email));
       //this.getUsers();
-    
+      alert("Success...");
   
         
     }

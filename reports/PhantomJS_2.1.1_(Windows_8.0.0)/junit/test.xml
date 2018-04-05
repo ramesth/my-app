@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<testsuite name="PhantomJS 2.1.1 (Windows 8.0.0)" package="" timestamp="2018-04-04T20:29:36" id="0" hostname="ramesh-PC" tests="6" errors="0" failures="0" time="0.068">
+  <properties>
+    <property name="browser.fullName" value="Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/538.1 (KHTML, like Gecko) PhantomJS/2.1.1 Safari/538.1"/>
+  </properties>
+  <testcase name="when this test is executed by Karma this is a failed test" time="0.014" classname="PhantomJS_2_1_1_(Windows_8_0_0).when this test is executed by Karma"/>
+  <testcase name="Person Component should create a person" time="0.036" classname="PhantomJS_2_1_1_(Windows_8_0_0).Person Component"/>
+  <testcase name="Person Component age should be" time="0.006" classname="PhantomJS_2_1_1_(Windows_8_0_0).Person Component"/>
+  <testcase name="Person Component check age 0 should return false" time="0.003" classname="PhantomJS_2_1_1_(Windows_8_0_0).Person Component"/>
+  <testcase name="Person Component check age 100 should return true" time="0.006" classname="PhantomJS_2_1_1_(Windows_8_0_0).Person Component"/>
+  <testcase name="Person Component check age 200 should return false" time="0.003" classname="PhantomJS_2_1_1_(Windows_8_0_0).Person Component"/>
+  <system-out>
+    <![CDATA[
+]]>
+  </system-out>
+  <system-err/>
+</testsuite>

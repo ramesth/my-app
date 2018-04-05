@@ -3,7 +3,9 @@
   "version": "0.0.1",
   "description": "my-app",
   "scripts": {
-    "start": "node ./index.js"
+    "start": "node ./index.js",
+    "webdriver-update": "webdriver-manager update",
+    "e2e":"protractor"
   },
   "dependencies": {
     "@angular/core": "^5.2.3",
